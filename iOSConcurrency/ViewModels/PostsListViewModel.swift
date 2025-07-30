@@ -9,6 +9,8 @@ import Foundation
 
 class PostsListViewModel: ObservableObject {
     @Published var posts: [PostModel] = []
+    @Published var isLoading: Bool = false
+    
     var userId: Int?
     
     func fetchPosts() {
@@ -19,14 +21,24 @@ class PostsListViewModel: ObservableObject {
 #endif
         if let userId = userId {
             let apiService = APIServiceCH(urlString: "https://jsonplaceholder.typicode.com/users/\(userId)/posts")
-            apiService.getJSON { (result: Result<[PostModel], APIError>) in
-                switch result {
-                case .success(let posts):
-                    DispatchQueue.main.async {
-                        self.posts = posts
+            isLoading.toggle()
+            /// Apply delay to show Progress Spinner
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                apiService.getJSON { (result: Result<[PostModel], APIError>) in
+                    /// Code for Progress Spinner
+                    defer {
+                        DispatchQueue.main.async {
+                            self.isLoading.toggle()
+                        }
                     }
-                case .failure(let error):
-                    print(error)
+                    switch result {
+                    case .success(let posts):
+                        DispatchQueue.main.async {
+                            self.posts = posts
+                        }
+                    case .failure(let error):
+                        print(error)
+                    }
                 }
             }
         }

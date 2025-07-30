@@ -9,6 +9,7 @@ import Foundation
 
 class UsersListViewModel: ObservableObject {
     @Published var users: [UserModel] = []
+    @Published var isLoading: Bool = false
     
     func fetchUsers() {
 #if DEBUG
@@ -17,14 +18,24 @@ class UsersListViewModel: ObservableObject {
         }
 #endif
         let apiService = APIServiceCH(urlString: "https://jsonplaceholder.typicode.com/users")
-        apiService.getJSON { (result: Result<[UserModel], APIError>) in
-            switch result {
-            case .success(let users):
-                DispatchQueue.main.async {
-                    self.users = users
+        isLoading.toggle()
+        /// Apply delay to show Progress Spinner
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            apiService.getJSON { (result: Result<[UserModel], APIError>) in
+                /// Code for Progress Spinner
+                defer {
+                    DispatchQueue.main.async {
+                        self.isLoading.toggle()
+                    }
                 }
-            case .failure(let error):
-                print(error)
+                switch result {
+                case .success(let users):
+                    DispatchQueue.main.async {
+                        self.users = users
+                    }
+                case .failure(let error):
+                    print(error)
+                }
             }
         }
     }

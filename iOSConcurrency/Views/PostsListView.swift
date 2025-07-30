@@ -10,7 +10,7 @@ import SwiftUI
 struct PostsListView: View {
 //    @StateObject var viewModel = PostsListViewModel()
 #warning("This is a preview only view. It will not call the actual API endpoint, Use line above when shipping to App Store!")
-    @StateObject var viewModel = PostsListViewModel(forPreview: true) // #if DEBUG... added to VM to stop calling actual endpoint
+    @StateObject var viewModel = PostsListViewModel(forPreview: false) // #if DEBUG... added to VM to stop calling actual endpoint
     var userId: Int?
     
     var body: some View {
@@ -26,6 +26,12 @@ struct PostsListView: View {
                     }
                 }
             }
+            /// Code for Progress Spinner
+            .overlay(content: {
+                if viewModel.isLoading {
+                    ProgressView()
+                }
+            })
             .navigationTitle("Posts")
             .navigationBarTitleDisplayMode(.inline)
             .listStyle(.plain)

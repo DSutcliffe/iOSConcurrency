@@ -10,7 +10,7 @@ import SwiftUI
 struct UsersListView: View {
 //    @StateObject private var viewModel = UsersListViewModel()
 #warning("This is a preview only view. It will not call the actual API endpoint, Use line above when shipping to App Store!")
-    @StateObject private var viewModel = UsersListViewModel(forPreview: true) // #if DEBUG... added to VM to stop calling actual endpoint
+    @StateObject private var viewModel = UsersListViewModel(forPreview: false) // #if DEBUG... added to VM to stop calling actual endpoint
     
     var body: some View {
         NavigationView {
@@ -28,6 +28,12 @@ struct UsersListView: View {
                     
                 }
             }
+            /// Code for Progress Spinner
+            .overlay(content: {
+                if viewModel.isLoading {
+                    ProgressView()
+                }
+            })
             .navigationTitle("Users")
             .listStyle(.plain)
             .onAppear {
