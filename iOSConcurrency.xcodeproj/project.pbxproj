@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		616496CC2E39F3CD00722C91 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 616496CB2E39F3CD00722C91 /* Assets.xcassets */; };
+		616496D52E39F90000722C91 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 616496D42E39F90000722C91 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		616496BB2E39F1F300722C91 /* iOSConcurrency.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSConcurrency.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		616496CB2E39F3CD00722C91 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		616496D42E39F90000722C91 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -37,7 +37,7 @@
 		616496B22E39F1F300722C91 = {
 			isa = PBXGroup;
 			children = (
-				616496C92E39F36300722C91 /* PreviewContent */,
+				616496D32E39F8C200722C91 /* PreviewContent */,
 				616496BD2E39F1F300722C91 /* iOSConcurrency */,
 				616496BC2E39F1F300722C91 /* Products */,
 			);
@@ -51,10 +51,10 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		616496C92E39F36300722C91 /* PreviewContent */ = {
+		616496D32E39F8C200722C91 /* PreviewContent */ = {
 			isa = PBXGroup;
 			children = (
-				616496CB2E39F3CD00722C91 /* Assets.xcassets */,
+				616496D42E39F90000722C91 /* Assets.xcassets */,
 			);
 			path = PreviewContent;
 			sourceTree = "<group>";
@@ -123,7 +123,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				616496CC2E39F3CD00722C91 /* Assets.xcassets in Resources */,
+				616496D52E39F90000722C91 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
