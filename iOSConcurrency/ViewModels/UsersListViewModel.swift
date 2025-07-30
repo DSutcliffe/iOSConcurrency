@@ -16,7 +16,7 @@ class UsersListViewModel: ObservableObject {
             return
         }
 #endif
-        let apiService = APIService(urlString: "https://jsonplaceholder.typicode.com/users")
+        let apiService = APIServiceCH(urlString: "https://jsonplaceholder.typicode.com/users")
         apiService.getJSON { (result: Result<[UserModel], APIError>) in
             switch result {
             case .success(let users):

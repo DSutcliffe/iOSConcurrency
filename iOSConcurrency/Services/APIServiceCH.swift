@@ -7,15 +7,8 @@
 
 import Foundation
 
-enum APIError: Error {
-    case invalidURL
-    case invalidResponseStatus
-    case dataTaskError
-    case corruptData
-    case decodingError
-}
-
-struct APIService {
+/// Using Completion Handler
+struct APIServiceCH {
     let urlString: String
     
     func getJSON<T: Decodable>(dateDecodingStrategy: JSONDecoder.DateDecodingStrategy = .deferredToDate,

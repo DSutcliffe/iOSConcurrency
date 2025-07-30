@@ -18,7 +18,7 @@ class PostsListViewModel: ObservableObject {
         }
 #endif
         if let userId = userId {
-            let apiService = APIService(urlString: "https://jsonplaceholder.typicode.com/users/\(userId)/posts")
+            let apiService = APIServiceCH(urlString: "https://jsonplaceholder.typicode.com/users/\(userId)/posts")
             apiService.getJSON { (result: Result<[PostModel], APIError>) in
                 switch result {
                 case .success(let posts):
