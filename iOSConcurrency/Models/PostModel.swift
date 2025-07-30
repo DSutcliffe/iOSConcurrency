@@ -15,4 +15,6 @@ struct PostModel: Codable, Identifiable {
     let id: Int
     let title: String
     let body: String
+    
+//    let test: String // to throw an error
 }

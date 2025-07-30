@@ -10,6 +10,8 @@ import Foundation
 class PostsListViewModel: ObservableObject {
     @Published var posts: [PostModel] = []
     @Published var isLoading: Bool = false
+    @Published var showAlert = false
+    @Published var errorMessage: String?
     
     var userId: Int?
     
@@ -23,7 +25,7 @@ class PostsListViewModel: ObservableObject {
             let apiService = APIServiceCH(urlString: "https://jsonplaceholder.typicode.com/users/\(userId)/posts")
             isLoading.toggle()
             /// Apply delay to show Progress Spinner
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+//            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 apiService.getJSON { (result: Result<[PostModel], APIError>) in
                     /// Code for Progress Spinner
                     defer {
@@ -37,10 +39,13 @@ class PostsListViewModel: ObservableObject {
                             self.posts = posts
                         }
                     case .failure(let error):
-                        print(error)
+                        DispatchQueue.main.async {
+                            self.showAlert = true
+                            self.errorMessage = error.localizedDescription + "\nPlease contact the developer and provide this error and steps to reproduce."
+                        }
                     }
                 }
-            }
+//            }
         }
     }
 }
