@@ -6,18 +6,26 @@
 	objectVersion = 77;
 	objects = {
 
-/* Begin PBXBuildFile section */
-		616496D52E39F90000722C91 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 616496D42E39F90000722C91 /* Assets.xcassets */; };
-/* End PBXBuildFile section */
-
 /* Begin PBXFileReference section */
 		616496BB2E39F1F300722C91 /* iOSConcurrency.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSConcurrency.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		616496D42E39F90000722C91 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		616496D72E3A195200722C91 /* Exceptions for "iOSConcurrency" folder in "iOSConcurrency" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 616496BA2E39F1F300722C91 /* iOSConcurrency */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		616496BD2E39F1F300722C91 /* iOSConcurrency */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				616496D72E3A195200722C91 /* Exceptions for "iOSConcurrency" folder in "iOSConcurrency" target */,
+			);
 			path = iOSConcurrency;
 			sourceTree = "<group>";
 		};
@@ -37,7 +45,6 @@
 		616496B22E39F1F300722C91 = {
 			isa = PBXGroup;
 			children = (
-				616496D32E39F8C200722C91 /* PreviewContent */,
 				616496BD2E39F1F300722C91 /* iOSConcurrency */,
 				616496BC2E39F1F300722C91 /* Products */,
 			);
@@ -49,14 +56,6 @@
 				616496BB2E39F1F300722C91 /* iOSConcurrency.app */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		616496D32E39F8C200722C91 /* PreviewContent */ = {
-			isa = PBXGroup;
-			children = (
-				616496D42E39F90000722C91 /* Assets.xcassets */,
-			);
-			path = PreviewContent;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -123,7 +122,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				616496D52E39F90000722C91 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,9 +269,9 @@
 				DEVELOPMENT_TEAM = 44JM73ZB4P;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = iOSConcurrency/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -299,9 +297,9 @@
 				DEVELOPMENT_TEAM = 44JM73ZB4P;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = iOSConcurrency/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
